@@ -1,4 +1,0 @@
-const TELEGRAM_BOT_TOKEN = '8336885363:AAGM4nJWnFPGlSSdXLBmjs64qKHYOt5caTo';
-module.exports = {
-  TELEGRAM_BOT_TOKEN
-};

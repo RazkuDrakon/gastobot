@@ -55,6 +55,7 @@ const INGRESO = [
   "agrega",
   "agregar",
   "mete",
+  "ingresa",
 
   // Cobros
   "cobro",

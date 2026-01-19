@@ -1,17 +1,14 @@
-const normalize = require("./normalize");
+const normalize = text => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"");
 const detectIntent = require("./intent");
-const extractAmount = require("./amount");
 const extractCategory = require("./category");
 
-function parseMessage(text) {
+module.exports = function parseMessage(text) {
   const normalized = normalize(text);
+  const intent = detectIntent(normalized);
+  const category = extractCategory(normalized);
 
-  return {
-    intent: detectIntent(normalized),
-    amount: extractAmount(normalized),
-    category: extractCategory(normalized),
-    raw: text
-  };
-}
+  const match = normalized.match(/(\d+(?:[.,]\d+)?)/);
+  const amount = match ? parseFloat(match[1].replace(",", ".")) : null;
 
-module.exports = parseMessage;
+  return { intent, amount, category };
+};

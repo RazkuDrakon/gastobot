@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/RazkuDrakon/gastobot#readme",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "telebot": "^1.4.1"
   }
 }
