@@ -21,8 +21,14 @@ function subtract(amount, category, chatId) {
   console.log(`[GASTO] -${amount}€ (${category})`);
 }
 
+function resetBalance(chatId) {
+  balances.set(chatId, 0);
+  console.log(`[RESET] Saldo reiniciado para el chat ${chatId}`);
+}
+
 module.exports = {
   add,
   subtract,
-  getBalance
+  getBalance,
+  resetBalance
 };

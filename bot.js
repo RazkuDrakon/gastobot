@@ -47,5 +47,10 @@ bot.on(/^\/saldo$/, msg => {
   bot.sendMessage(chatId, `Tu saldo actual es: ${balance}€`);
 });
 
+bot.on(/^\/reset$/, msg => {
+  const chatId = msg.chat.id;
+  resetBalance(chatId);
+  bot.sendMessage(chatId, `Tu saldo ha sido reiniciado.`);
+});
 
 bot.start();
