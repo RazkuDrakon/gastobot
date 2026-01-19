@@ -1,0 +1,23 @@
+{
+  "name": "gastobot",
+  "version": "1.0.0",
+  "description": "Bot de Telegram que ayuda con la gestión de gastos en el día a día.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RazkuDrakon/gastobot.git"
+  },
+  "author": "RazkuDrakon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RazkuDrakon/gastobot/issues"
+  },
+  "homepage": "https://github.com/RazkuDrakon/gastobot#readme",
+  "dependencies": {
+    "telebot": "^1.4.1"
+  }
+}
