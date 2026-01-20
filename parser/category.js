@@ -1,23 +1,49 @@
 const CATEGORIES = {
-  "compra": ["supermercado", "tienda", "compra", "mercado"],
-  "gasolina": ["gasolina", "diesel", "carburante", "gas"],
-  "ocio": ["ocio", "restaurante", "bar", "pub","cena","comida"],
-  "cultura": ["cultura", "libro", "museo", "arte", "videojuego", "cine", "pelicula", "comic", "manga"],
-  "alquiler": ["alquiler", "renta", "piso", "departamento"],
-  "transporte": ["bus", "metro", "taxi", "uber", "tren", "billete", "avion"],
-  "factura": ["factura", "recibo", "comprobante", "ticket"],
+  cultura: {
+    comic: ["comic", "manga"],
+    cine: ["cine", "pelicula"],
+    libros: ["libro"],
+    videojuegos: ["videojuego"]
+  },
+
+  compra: {
+    supermercado: ["supermercado", "mercadona", "lidl", "aldi"],
+    mercado: ["mercado", "tienda"]
+  },
+
+  ocio: {
+    restaurante: ["restaurante", "bar", "pub"],
+    comida: ["cena", "comida"]
+  },
+
+  gasolina: {
+    combustible: ["gasolina", "diesel", "carburante"]
+  },
+
+  transporte: {
+    publico: ["bus", "metro", "tren"],
+    privado: ["taxi", "uber"],
+    avion: ["avion", "billete"]
+  },
+
+  factura: {
+    suministros: ["luz", "agua", "internet"],
+    recibo: ["factura", "recibo"]
+  }
 };
 
-
 module.exports = function extractCategory(text) {
-  const normalized = text.toLowerCase();
+  const words = text.split(/\s+/);
 
-  for (const [category, keywords] of Object.entries(CATEGORIES)) {
-    if (keywords.some(word => normalized.includes(word))) {
-      return category;
+  for (const [category, subcats] of Object.entries(CATEGORIES)) {
+    for (const [subcategory, keywords] of Object.entries(subcats)) {
+      for (const keyword of keywords) {
+        if (words.includes(keyword)) {
+          return { category, subcategory };
+        }
+      }
     }
   }
 
-  return "general";
+  return { category: "general", subcategory: "general" };
 };
-

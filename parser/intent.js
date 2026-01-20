@@ -30,6 +30,8 @@ const GASTO = [
   "acabo de gastar",
   "me he gastado",
   "me gaste",
+  "he comprado",
+  "me he comprado",
 
   // Otros
   "coste",
