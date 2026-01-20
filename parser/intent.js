@@ -21,6 +21,8 @@ const GASTO = [
   "apunta",
   "apuntar",
   "mete",
+  "añade",
+  "añadir",
 
   // Expresiones naturales
   "he gastado",

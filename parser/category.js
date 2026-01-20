@@ -1,9 +1,10 @@
 const CATEGORIES = {
   "compra": ["supermercado", "tienda", "compra", "mercado"],
   "gasolina": ["gasolina", "diesel", "carburante", "gas"],
-  "ocio": ["cine", "videojuego", "ocio", "restaurante", "bar", "pub","cena","comida"],
+  "ocio": ["ocio", "restaurante", "bar", "pub","cena","comida"],
+  "cultura": ["cultura", "libro", "museo", "arte", "videojuego", "cine", "pelicula", "comic", "manga"],
   "alquiler": ["alquiler", "renta", "piso", "departamento"],
-  "transporte": ["bus", "metro", "taxi", "uber", "tren", "billete"],
+  "transporte": ["bus", "metro", "taxi", "uber", "tren", "billete", "avion"],
   "factura": ["factura", "recibo", "comprobante", "ticket"],
 };
 

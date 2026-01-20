@@ -7,7 +7,13 @@ const { add, subtract, getBalance, getHistory, getExpensesByCategory } = require
 const bot = new TeleBot({ token: process.env.TELEGRAM_BOT_TOKEN });
 
 bot.on(["/start", "/iniciar"], (msg) => {
-  bot.sendMessage(msg.chat.id, `¡Hola, ${msg.chat.username}! Soy tu asistente de gastos.`);
+  bot.sendMessage(msg.chat.id, `¡Hola, ${msg.chat.username}! Soy tu asistente de gastos. Usa los siguientes comandos:
+    \n/start - Iniciar el bot
+    \n/saldo - Consultar saldo
+    \n/historial - Ver historial de gastos
+    \n/reset - Reiniciar saldo
+    \n/gastos - Ver gastos por categoría
+    \nEjemplo: 'Añade 15 euros de compra'`);
 });
 
 bot.on("text", msg => {
